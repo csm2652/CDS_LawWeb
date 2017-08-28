@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Narsha Tech</title>
+    <link rel="stylesheet" type="text/css" href="../public/stylesheet/sign_in_up.css">
+</head>
+<body>
+<div id="sign_in">
+    <div id="background_in"/>
+    <!--{% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}-->
+    <div id="signup_content" class="content">
+        <div id="wrapper_login_form" class="box">
+
+            <form id="login_form" method="post" action="{{ url_for('go_reserved') }}">
+                <a>로그인</a>
+                <input type="hidden" name="hiddenvalue" value='signin'>
+                <br>
+                <label for="uid">ID</label>
+                <input class="input_border" type="text" name="uid" id="uid"><br>
+                <label for="pw">Password</label>
+                <input class="input_border" type="password" name="pw"id="pw"><br><br>
+                <input class="btn btn-blue" type="submit" value="Sign In">
+                <br/>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
