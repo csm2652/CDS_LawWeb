@@ -32,10 +32,11 @@ conn.query(sql, function(err, rows, fields){
             console.log(err);
           } else {
             for(var i=0; i<rows.length; i++){
-              console.log(rows[i]);
+              console.log(rows);
             }
           } 
-          res.render('board.ejs' ,{title: rows[0].title});
+          res.render('board.ejs' ,{db:rows});
+
     }); 
     });
 app.set('views', __dirname + '/views');

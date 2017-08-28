@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -78,10 +78,10 @@
                     <tbody id = 't_body'>
                     
                         <tr id = 't_row' onclick="go_read('route')">
-                            <td><%= title%></td>
+                            <td><%=db[0].title%></td>
                             <td>admin</td>
                             <td>김장현입니다.</td>
-                            <td>2016-11-15</td>
+                            <td><%=db[0].Time%></td>
                             <td>2</td>
                         </tr>
                         <tr>
