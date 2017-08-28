@@ -10,7 +10,9 @@
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../public/stylesheet/header.css">
+    <link rel="stylesheet" href="../stylesheet/header.css">
+    <link rel="stylesheet" href="../stylesheet/homepage.css">
+
 </head>
 <body>
 <div id="container">
@@ -35,13 +37,36 @@
             </form>
             <p>|</p>
             <form id="go_navigation" method="get" action="{{url_for('go_navigation')}}">
-                <p onclick="document.getElementById('go_navigation').submit()">찾아 오시는 길</p>
+                <p onclick="alert('weifj');document.getElementById('go_navigation').submit()">찾아 오시는 길</p>
             </form>
         </div>
     </div>
 
-    <div id="body">
-
+    <div id="body" class="homepage">
+        <!--누르면 board로 이동 하는데 각 버튼 마다 다른 키값을 같이 주도록-->
+        <form id="go_board" method="get" action="{{url_for('go_board')}}">
+            <div id="button_container">
+                <div class="home_button_block" onclick="document.getElementById('go_board').submit()">
+                    <br/><br/>
+                    <img src="../image/home.png"/>
+                    <br/>
+                    <a>부동산</a>
+                    <br/>
+                </div>
+                <div class="home_button_block" onclick="document.getElementById('go_board').submit();">
+                    <br/><br/>
+                    <img src="../image/bell.png"/>
+                    <br/>
+                    <a>형법</a>
+                </div>
+                <div class="home_button_block" onclick="document.getElementById('go_board').submit()">
+                    <br/><br/>
+                    <img src="../image/user.png"/>
+                    <br/>
+                    <a>민법</a>
+                </div>
+            </div>
+        </form>
     </div>
 
     <div id="footer">
