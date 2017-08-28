@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>board</title>
     <style>
-        body,html{
-            width:100%;
-            height:100%;
-            margin:0;
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
         }
     </style>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/stylesheet/header.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheet/board_table.css">
-    <!--<link rel="stylesheet" type="text/css" href="../stylesheet/mainpage.css">-->
-    <link rel="stylesheet" type="text/css" href="/stylesheet/text.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheet/header.css">
+    <link rel="stylesheet" href="stylesheet/footer.css">
+    <link rel="stylesheet" href="stylesheet/board_table.css">
+    <link rel="stylesheet" href="stylesheet/mainpage.css">
+    <link rel="stylesheet" href="stylesheet/text.css">
 </head>
-
 <body>
-<div id="container">
-    <div id="header">
-
-        <div id="header_upper">
-
-        </div>
-        <div id="header_middle">
-            <div id="header_middle_content">
-                <form id="go_main" method="get" action="{{url_for('go_main')}}">
-                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../image/logo.png"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<div id="header">
+    <div id="title_bar">
+        <div class="container">
+            <form id="go_main" method="get" action="/">
+                <div id="logo">
+                    <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../image/logo.png"/>
+                </div>
                 <a id="title_txt" onclick="document.getElementById('go_main').submit()">최덕순 법률 사무소</a>
-                </form>
-
-            </div>
-
-        </div>
-        <div id="header_bottom">
-            <form id="go_profile" method="get" action="{{url_for('go_profile')}}">
-                <p onclick="document.getElementById('go_profile').submit()">프로필</p>
-            </form>
-            <p>|</p>
-            <form id="go_navigation" method="get" action="{{url_for('go_navigation')}}">
-                <p onclick="document.getElementById('go_navigation').submit()">찾아 오시는 길</p>
             </form>
         </div>
     </div>
-
-    <div id="body" class="board_body">
-        <div id="board_header">
+    <div id="body_header">
+        <div id="body_top_bar"></div>
+        <div id="body_bar">
+            <div id="body_bar_content">
+                <form id="go_profile" method="get" action="/profil">
+                    <p onclick="document.getElementById('go_profile').submit()">프로필</p>
+                </form>
+                <p>|</p>
+                <form id="go_navigation" method="get" action="/">
+                    <p onclick="document.getElementById('go_navigation').submit()">찾아 오시는 길</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="body" style="height:100%;">
+        <div id="background"></div>
+        <div id="body_content"  class="content">
+            <div id="board_header">
                 <div id="title_left" onClick="plusSlides(-1)">
                     <p>&#10094;</p>
                 </div>
@@ -63,22 +64,23 @@
                     <p>&#10095;</p>
                 </div>
             </div>
-        <div id="board_container" style="border: 2px gray solid;">
+            <div id="board_container" style="border: 2px gray solid;">
                 <table class="table table-striped" style="width:100%; height:100%;">
                     <thead>
                         <tr>
-                            <th style="background-color: gray; text-align:center">No.</th>
-                            <th style="background-color: gray; text-align:center">글쓴이</th>
-                            <th style="background-color: gray; text-align:center">제목</th>
-                            <th style="background-color: gray; text-align:center">날짜</th>
-                            <th style="background-color: gray; text-align:center">조회수</th>
+                            <th style="background-color: gray">No.</th>
+                            <th style="background-color: gray">글쓴이</th>
+                            <th style="background-color: gray">제목</th>
+                            <th style="background-color: gray">날짜</th>
+                            <th style="background-color: gray">조회수</th>
                         </tr>
                     </thead>
                     <tbody id = 't_body'>
+                    
                         <tr id = 't_row' onclick="go_read('route')">
-                            <td>1</td>
-                            <td>최승민</td>
-                            <td>디비테스트.</td>
+                            <td><%=db[0].title%></td>
+                            <td>admin</td>
+                            <td>김장현입니다.</td>
                             <td><%=db[0].Time%></td>
                             <td>2</td>
                         </tr>
@@ -148,6 +150,7 @@
                     </tbody>
                 </table>
             </div>
+            <a class="btn btn-default">글쓰기</a>
         <div id="board_page_position" class="text-center">
             <ul id = 'pageShow' class="pagination">
                 <li><a href="#">1</a></li>
@@ -157,13 +160,14 @@
                 <li><a href="#">5</a></li>
             </ul>
         </div>
+        </div>
+
     </div>
     <div id="footer">
-        <h4> tel: 010-8607-3738  </h4>
-        <p>location: 서울시 서초구 삼성로 110 31번지</p>
-        <p>영업시간: 9:00 ~ 18:00 (사정에 따라 없을 수 도 있습니다.)</p>
+        <div id="footer_bar">
+
+        </div>
     </div>
 <script src="../scripts/board.js"></script>
-</div>
 </body>
 </html>
