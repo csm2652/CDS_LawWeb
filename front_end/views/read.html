@@ -11,9 +11,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="../stylesheet/header.css">
-    <link rel="stylesheet" href="../stylesheet/text.css">
-    <link rel="stylesheet" href="../stylesheet/read.css">
+    <link rel="stylesheet" href="../public/stylesheet/header.css">
+    <link rel="stylesheet" href="../public/stylesheet/text.css">
+    <link rel="stylesheet" href="../public/stylesheet/read.css">
 
 </head>
 <body>
@@ -25,8 +25,8 @@
         </div>
         <div id="header_middle">
             <div id="header_middle_content">
-                <form id="go_main" method="get" action="/">
-                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../image/logo.png"/>
+                <form id="go_main" method="get" action="{{url_for('go_main')}}">
+                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../public/image/logo.png"/>
                 <a id="title_txt" onclick="document.getElementById('go_main').submit()">최덕순 법률 사무소</a>
                 </form>
 
@@ -71,6 +71,6 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="../scripts/read.js"></script>
+<script src="../public/scripts/read.js"></script>
 </body>
 </html>

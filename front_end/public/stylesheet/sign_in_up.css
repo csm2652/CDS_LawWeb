@@ -36,7 +36,6 @@ html, body {
 
 #background_in {
     position: relative;
-    background-image: url("../image/background.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     top: 200px;

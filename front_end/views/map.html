@@ -10,8 +10,8 @@
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../stylesheet/header.css">
-    <link rel="stylesheet" href="../stylesheet/map.css">
+    <link rel="stylesheet" href="../public/stylesheet/header.css">
+    <link rel="stylesheet" href="../public/stylesheet/map.css">
 </head>
 <body>
 <div id="container">
@@ -22,8 +22,8 @@
         </div>
         <div id="header_middle">
             <div id="header_middle_content">
-                <form id="go_main" method="get" action="/">
-                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../image/logo.png"/>
+                <form id="go_main" method="get" action="{{url_for('go_main')}}">
+                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../public/image/logo.png"/>
                 <a id="title_txt" onclick="document.getElementById('go_main').submit()">최덕순 법률 사무소</a>
                 </form>
 
@@ -31,11 +31,11 @@
 
         </div>
         <div id="header_bottom">
-            <form id="go_profile" method="get" action="/profil">
+            <form id="go_profile" method="get" action="{{url_for('go_profile')}}">
                 <p onclick="document.getElementById('go_profile').submit()">프로필</p>
             </form>
             <p>|</p>
-            <form id="go_navigation" method="get" action="/route">
+            <form id="go_navigation" method="get" action="{{url_for('go_navigation')}}">
                 <p onclick="document.getElementById('go_navigation').submit()">찾아 오시는 길</p>
             </form>
         </div>
@@ -94,7 +94,7 @@
     </div>
 </div>
 
-<script src="../scripts/map.js"></script>
+<script src="../public/scripts/map.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk5c_J98d8Ln_kRrdJL7-5Vxk36SYmQEc&callback=myMap"></script>
 </body>
 </html>

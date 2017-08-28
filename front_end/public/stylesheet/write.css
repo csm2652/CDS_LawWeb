@@ -1,8 +1,19 @@
+body{
+    margin:0;
+    background: radial-gradient(farthest-corner at 0% 0%, #e6b4b4 20%, #ffb400 60%, #B5F0E9);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
 #background{
     background-color: rgba(8, 255, 65, 0.42);
+
 }
 #write_container{
     text-align:center;
+     background: radial-gradient(farthest-corner at 0% 0%, #e6b4b4 20%, #ffb400 60%, #B5F0E9);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
 }
 #write_box{
     max-width:900px;
