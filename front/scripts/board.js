@@ -9,12 +9,12 @@ var estateSize;
 var crimSize;
 var civilSize;
 var db_nodes;//그법에 node 갯수
-init();
+// init();
 
-function init(){
-    var a = 123;//부동산 사건
-    var b = 32;//형법 사건
-    var c = 21;//민법 사건
+function init(a, b, c){
+    // var a = 123;//부동산 사건
+    // var b = 32;//형법 사건
+    // var c = 21;//민법 사건
 
     kinds=1;//각각에 맞는 번호로 우선 넣기 (부동산1, 형법2, 민법3)
 
