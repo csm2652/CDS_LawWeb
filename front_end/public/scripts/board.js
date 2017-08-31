@@ -220,3 +220,24 @@ function showSlides(n) {
 
 }
 
+
+function go_read(object){
+    var num = $(object).find("td").first().text();
+    alert(num);
+    var allData = { "number": num, "kind": kinds };//page: 클릭한 페이지, kind:(부동산1, 형법2, 민법3)
+    $.ajax({
+        url:"",//url 넣으셍
+        type:'GET',
+        data: allData,
+        success:function(data){
+            alert("완료!");
+            window.opener.location.reload();
+            self.close();
+        },
+        error:function(jqXHR, textStatus, errorThrown){
+            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+            self.close();
+        }
+    });
+}
+
