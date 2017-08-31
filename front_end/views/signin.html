@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>log in</title>
     <link rel="stylesheet" type="text/css" href="../public/stylesheet/sign_in_up.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="sign_in">
@@ -20,13 +21,13 @@
                 <input class="input_border" type="text" name="uid" id="uid"><br>
                 <label for="pw">Password</label>
                 <input class="input_border" type="password" name="pw"id="pw"><br><br>
-                <input class="btn btn-blue" type="submit" value="Sign In">
+                <input class="btn btn-gray" type="submit" value="Write">
                 <br/>
-
             </form>
+            <input class="btn btn-blue" type="submit" onclick="signIn()" value="Sign In">
         </div>
     </div>
 </div>
-
+<script src="../public/scripts/signIn.js"></script>
 </body>
 </html>
