@@ -25,7 +25,7 @@ function init(a, b, c){
     else
         db_nodes = new Array(civilSize);
 
-    //Paging(전체데이타수,페이지당 보여줄 데이타수,페이지 그룹 범위,현재페이지 번호,token명)
+    //Paging(전체데이타수,페이지당 보여줄 데이타수,페이지그룹 범위,현재페이지 번호,token명)
     var page_viewList = Paging(127, 10, 10 ,1, "PagingView");
     $("#pageShow").empty().html(page_viewList);
 
@@ -224,7 +224,7 @@ function showSlides(n) {
 function go_read(object){
     var num = $(object).find("td").first().text();
     alert(num);
-    var allData = { "number": num, "kind": kinds };//page: 클릭한 페이지, kind:(부동산1, 형법2, 민법3)
+    var allData = { "number": num, "kind": kinds };//노드 번호, 법종류
     $.ajax({
         url:"",//url 넣으셍
         type:'GET',
