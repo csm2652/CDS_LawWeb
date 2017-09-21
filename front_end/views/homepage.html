@@ -10,8 +10,8 @@
     </style>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../public/stylesheet/header.css">
-    <link rel="stylesheet" href="../public/stylesheet/homepage.css">
+    <link rel="stylesheet" href="/stylesheet/header.css">
+    <link rel="stylesheet" href="/stylesheet/homepage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 </head>
@@ -24,8 +24,8 @@
         </div>
         <div id="header_middle">
             <div id="header_middle_content">
-                <form id="go_main" method="get" action="{{url_for('go_main')}}">
-                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="../public/image/logo.png"/>
+                <form id="go_main" method="get" action="/home">
+                <img id="logo_img" onclick="document.getElementById('go_main').submit()" src="/image/logo.png"/>
                 <a id="title_txt" onclick="document.getElementById('go_main').submit()">최덕순 법률 사무소</a>
                 </form>
 
@@ -33,36 +33,36 @@
 
         </div>
         <div id="header_bottom">
-            <form id="go_profile" method="get" action="{{url_for('go_profile')}}">
+            <form id="go_profile" method="get" action="/profile">
                 <p onclick="document.getElementById('go_profile').submit()">프로필</p>
             </form>
             <p>|</p>
-            <form id="go_navigation" method="get" action="{{url_for('go_navigation')}}">
+            <form id="go_navigation" method="get" action="/route">
                 <p onclick="alert('weifj');document.getElementById('go_navigation').submit()">찾아 오시는 길</p>
             </form>
         </div>
     </div>
 
-    <div id="body" class="homepage">
+    <div id="body" class="homepage" >
         <!--누르면 board로 이동 하는데 각 버튼 마다 다른 키값을 같이 주도록-->
-        <form id="go_board" method="get" action="{{url_for('go_board')}}">
+        <form id="go_board" method="get">
             <div id="button_container">
                 <div class="home_button_block" onclick="home_block1()">
                     <br/><br/>
-                    <img src="../public/image/home.png"/>
+                    <img src="/image/home.png"/>
                     <br/>
                     <a>부동산</a>
                     <br/>
                 </div>
                 <div class="home_button_block" onclick="home_block2()">
                     <br/><br/>
-                    <img src="../public/image/bell.png"/>
+                    <img src="/image/bell.png"/>
                     <br/>
                     <a>형법</a>
                 </div>
                 <div class="home_button_block" onclick="home_block3()">
                     <br/><br/>
-                    <img src="../public/image/user.png"/>
+                    <img src="/image/user.png"/>
                     <br/>
                     <a>민법</a>
                 </div>
@@ -76,6 +76,6 @@
         <p>영업시간: 9:00 ~ 18:00 (사정에 따라 없을 수 도 있습니다.)</p>
     </div>
 </div>
-<script src="../public/scripts/homepage.js"></script>
+<script src="/scripts/homepage.js"></script>
 </body>
 </html>

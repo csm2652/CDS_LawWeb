@@ -8,15 +8,15 @@ var kinds;//어떤 법인지
 var estateSize;
 var crimSize;
 var civilSize;
-var db_nodes;//그법에 node 갯수
+var db_nodes;//그법-에 node 갯수
 
-function init(a, b, c){
-    kinds=1;//각각에 맞는 번호로 우선 넣기 (부동산1, 형법2, 민법3)
+function init(a, b, c,_kind){
+    kinds= _kind;//각각에 맞는 번호로 우선 넣기 (부동산1, 형법2, 민법3)
 
     estateSize = a;
     crimSize = b;
     civilSize = c;
-
+   
     //배열 생성(node수)(6)
     if(kinds==1)
         db_nodes = new Array(estateSize);
@@ -26,7 +26,7 @@ function init(a, b, c){
         db_nodes = new Array(civilSize);
 
     //Paging(전체데이타수,페이지당 보여줄 데이타수,페이지그룹 범위,현재페이지 번호,token명)
-    var page_viewList = Paging(127, 10, 10 ,1, "PagingView");
+    var page_viewList = Paging(db_nodes.length, 10, 10 ,page, "PagingView");
     $("#pageShow").empty().html(page_viewList);
 
 }
@@ -153,7 +153,7 @@ var goPaging_PagingView = function(cPage){
 
     var allData = { "page": cPage, "kind": kinds };//page: 클릭한 페이지, kind:(부동산1, 형법2, 민법3)
     $.ajax({
-        url:"",//url 넣으셍
+        url:"/board",//url 넣으셍
         type:'GET',
         data: allData,
         success:function(data){
@@ -181,7 +181,7 @@ function plusSlides(n){
     kinds+=n;
     if(kinds>3){kinds = 1;}
     if(kinds==0){kinds=3;}
-    alert(kinds);
+
 }
 
 function currentSlide(n) {
@@ -205,14 +205,13 @@ function showSlides(n) {
 
     if(slideIndex == 1){
         numberNode = estateSize;
-        alert(estateSize);
-        alert(numberNode);
+ 
     } else if (slideIndex==2){
         numberNode = crimSize;
-        alert(numberNode);
+    
     } else {
         numberNode = civilSize;
-        alert(numberNode);
+ 
     }
 
     var page_viewList = Paging(numberNode, 10, 10, 1, "PagingView");
@@ -221,23 +220,23 @@ function showSlides(n) {
 }
 
 
-function go_read(object){
-    var num = $(object).find("td").first().text();
-    alert(num);
-    var allData = { "number": num, "kind": kinds };//노드 번호, 법종류
-    $.ajax({
-        url:"",//url 넣으셍
-        type:'GET',
-        data: allData,
-        success:function(data){
-            alert("완료!");
-            window.opener.location.reload();
-            self.close();
-        },
-        error:function(jqXHR, textStatus, errorThrown){
-            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
-            self.close();
-        }
-    });
-}
+                                                    function go_read(object){
+                                                        var num = $(object).index();
+                                                        alert(num);
+                                                        var allData = { "index": num, "kind": kinds };//노드 번호, 법종류
+                                                        $.ajax({
+                                                            url:"",//url 넣으셍
+                                                            type:'GET',
+                                                            data: allData,
+                                                            success:function(data){
+                                                                alert("완료!");
+                                                                window.opener.location.reload();
+                                                                self.close();
+                                                            },
+                                                            error:function(jqXHR, textStatus, errorThrown){
+                                                                alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+                                                                self.close();
+                                                            }
+                                                        });
+                                                    }
 

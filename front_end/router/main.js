@@ -7,14 +7,14 @@ module.exports = function(app)
      app.post('/',function(req,res){
         res.render('homepage.html')
      });
-     app.get('/profil',function(req,res){
+     app.get('/profile',function(req,res){
         res.render('profile.html');
     });
      app.get('/write',function(req,res){
         res.render('write.html');
     });
        app.get('/route',function(req,res){
-        res.render('direction.html');
+        res.render('map.html');
     });
        app.get('/read',function(req,res){
 

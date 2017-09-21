@@ -4,12 +4,12 @@
 function home_block1(){
     var allData = { "page": 1, "kind": 1 };//page: 클릭한 페이지, kind:(부동산1, 형법2, 민법3)
     $.ajax({
-        url:"",//url 넣으셍
+        url:"/board",//url 넣으셍s
         type:'GET',
         data: allData,
         success:function(data){
             alert("완료!");
-            window.opener.location.reload();
+            window.location.href='/board?page=1&kind=1';
             self.close();
         },
         error:function(jqXHR, textStatus, errorThrown){
@@ -19,10 +19,12 @@ function home_block1(){
     });
 }
 
+    //window.location.href = '/board?page=1&kind=1';
+
 function home_block2(){
 var allData = { "page": 1, "kind": 2 };//page: 클릭한 페이지, kind:(부동산1, 형법2, 민법3)
     $.ajax({
-        url:"",//url 넣으셍
+        url:"/board",//url 넣으셍
         type:'GET',
         data: allData,
         success:function(data){
@@ -40,8 +42,8 @@ var allData = { "page": 1, "kind": 2 };//page: 클릭한 페이지, kind:(부동
 function home_block3(){
 var allData = { "page": 1, "kind": 3 };//page: 클릭한 페이지, kind:(부동산1, 형법2, 민법3)
     $.ajax({
-        url:"",//url 넣으셍
-        type:'GET',
+        url:"/board",//url 넣으셍
+        type:'GET',     
         data: allData,
         success:function(data){
             alert("완료!");
